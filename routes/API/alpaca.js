@@ -1,5 +1,6 @@
 const Alpaca = require('@alpacahq/alpaca-trade-api')
-const fs = require('fs')
+const fs = require('fs');
+const { resolve } = require('path');
 
 class Bot {
 
@@ -18,9 +19,14 @@ class Bot {
     }
 
     getAcc(){
-        this.alpaca.getAccount().then((account) => {
-            console.log('Current Account:', account)
-          })
+        return new Promise((resolve,reject)=>{
+            this.alpaca.getAccount().then((account) => {
+                console.log(account)
+                resolve('Current Account:', account)
+            }).catch((e)=>{
+                reject(e)
+            })
+        })
     }
 
     placeOrder(symbol, qty, side, type, tif, limit, stop,){
@@ -69,6 +75,15 @@ class Bot {
         })
     }
 
+    async liquidatePositions(){
+        await this.sleep(30000)
+        this.alpaca.closeAllPositions()
+    }
+
+    sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
       
@@ -88,6 +103,13 @@ class Bot {
         return array;
     }
 
+    normalize(val1, val2, max, min) {
+        var a = (max-min)/(max-min)*(val1-min)+min
+        var b = (max-min)/(max-min)*(val2-min)+min
+        var normalizedData = a+b
+        return normalizedData
+    }
+
     getDate(){
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
@@ -99,34 +121,63 @@ class Bot {
     }
 
 
-    async automation(pricePoint){
+    async automation(pricePoint, budget){
         var today = this.getDate()
         var assetsShuffled = this.shuffle(this.availableAssets)
         var promises = []
-        var prices = []
-        for(var i = 0; i < 3; i++){
-            promises.push(this.alpaca.getBars('minute',assetsShuffled[i],{limit: 1,start: today,end: today,}).then((response)=>{
-                prices.push(response)
-                console.log(response)
+        var output = []
+        for(var i = 0; i < 100; i++){
+            promises.push(this.alpaca.getBars('minute',assetsShuffled[i],{limit: 10,start: today,end: today,}).then((response)=>{
+                var objKey = Object.keys(response)
+                var asset = response[objKey]
+                if(asset){
+                    if(asset.length=10){
+                        try{
+                            if(asset[0].closePrice <= pricePoint){
+                                var priceGuess = 0;
+                                var volumeGuess = 0;
+                                for(var j = 1; j < asset.length; j++){
+                                    priceGuess += (asset[j].closePrice - asset[j-1].closePrice)/asset[j].closePrice
+                                    volumeGuess += (asset[j].volume - asset[j-1].volume)/asset[j].volume
+                                }
+                                var normalizedData = this.normalize(priceGuess,volumeGuess, 1, -1)
+                                if(normalizedData>0){
+                                    var randomMult = Math.floor((Math.random()*10)+1)
+                                    var numToBuy = Math.floor((Math.floor(budget/asset[0].closePrice))/randomMult)
+                                    if(numToBuy>0){
+                                        output.push("bought " + numToBuy + " of " + objKey + " at " + asset[0].closePrice)
+                                        var moneySpent = numToBuy*asset[0].closePrice
+                                        budget -= moneySpent
+                                        this.alpaca.createOrder({
+                                            symbol: objKey.toString(),
+                                            qty: numToBuy,
+                                            side: 'buy',
+                                            type: 'market',
+                                            time_in_force: 'fok'
+                                        })
+                                    }
+                                }
+                            }
+                        } catch (e){
+                            //oof
+                        }
+                    }
+                }
             }))
         }
         Promise.all(promises).then(()=>{
-            console.log('done')
+            this.liquidatePositions()
+            return(output)
         }).catch((e)=>{
             console.log(e)
+            return('something is broken. try again.')
         })
     }
 }
 
-/*var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
-
-//bot.automation(200);
-
-var today = bot.getDate()
-bot.alpaca.getBars('minute', 'AAPL', {limit:1,start: today,end: today}).then((response)=>{
-    console.log(response.AAPL[0].closePrice)
-})*/
+var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
+console.log(bot.getAcc())
 
 
 
-module.exports = Bot;
+//module.exports = Bot;
