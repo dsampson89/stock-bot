@@ -13,6 +13,8 @@ if (process.env.NODE_ENV === "production") {
 
 // Define API routes here
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://heroku_5j922hxq:password1357@ds133311.mlab.com:33311/heroku_5j922hxq")
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
