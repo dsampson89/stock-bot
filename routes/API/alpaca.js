@@ -21,8 +21,7 @@ class Bot {
     getAcc(){
         return new Promise((resolve,reject)=>{
             this.alpaca.getAccount().then((account) => {
-                console.log(account)
-                resolve('Current Account:', account)
+                resolve(account)
             }).catch((e)=>{
                 reject(e)
             })
@@ -44,16 +43,20 @@ class Bot {
     }
 
     getStats(timeFrame, symbols, limit, start, end){
-        this.alpaca.getBars(
-            timeFrame,
-            symbols, // which ticker symbols to get bars for
-            {
-              limit: limit,
-              start: start,
-              end: end,
-            }
-        ).then((response) => {
-            console.log(response)
+        return new Promise((resolve,reject)=>{
+            this.alpaca.getBars(
+                timeFrame,
+                symbols, // which ticker symbols to get bars for
+                {
+                  limit: limit,
+                  start: start,
+                  end: end,
+                }
+            ).then((response) => {
+                resolve(response)
+            }).catch((e)=>{
+                reject(e)
+            })
         })
     }
 
@@ -175,9 +178,4 @@ class Bot {
     }
 }
 
-var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
-console.log(bot.getAcc())
-
-
-
-//module.exports = Bot;
+module.exports = Bot;
