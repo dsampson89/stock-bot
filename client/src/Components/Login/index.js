@@ -23,7 +23,7 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                <a href="/portfolio" className="btn btn-primary">Submit</a>
             </form>
         );
     }
