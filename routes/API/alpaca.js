@@ -1,6 +1,6 @@
 const Alpaca = require('@alpacahq/alpaca-trade-api')
 const fs = require('fs');
-const { resolve } = require('path');
+const util = require('./utilities')
 
 class Bot {
 
@@ -79,54 +79,13 @@ class Bot {
     }
 
     async liquidatePositions(){
-        await this.sleep(30000)
+        await util.sleep(30000)
         this.alpaca.closeAllPositions()
     }
 
-    sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
-      
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
-      
-          // Pick a remaining element...
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
-      
-          // And swap it with the current element.
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
-        }
-      
-        return array;
-    }
-
-    normalize(val1, val2, max, min) {
-        var a = (max-min)/(max-min)*(val1-min)+min
-        var b = (max-min)/(max-min)*(val2-min)+min
-        var normalizedData = a+b
-        return normalizedData
-    }
-
-    getDate(){
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
-        today = yyyy + '-' + mm + '-' + dd;
-
-        return today
-    }
-
-
     async automation(pricePoint, budget){
-        var today = this.getDate()
-        var assetsShuffled = this.shuffle(this.availableAssets)
+        var today = util.getDate()
+        var assetsShuffled = util.shuffle(this.availableAssets)
         var promises = []
         var output = []
         for(var i = 0; i < 100; i++){
@@ -143,7 +102,7 @@ class Bot {
                                     priceGuess += (asset[j].closePrice - asset[j-1].closePrice)/asset[j].closePrice
                                     volumeGuess += (asset[j].volume - asset[j-1].volume)/asset[j].volume
                                 }
-                                var normalizedData = this.normalize(priceGuess,volumeGuess, 1, -1)
+                                var normalizedData = util.normalize(priceGuess,volumeGuess, 1, -1)
                                 if(normalizedData>0){
                                     var randomMult = Math.floor((Math.random()*10)+1)
                                     var numToBuy = Math.floor((Math.floor(budget/asset[0].closePrice))/randomMult)
@@ -178,4 +137,6 @@ class Bot {
     }
 }
 
-module.exports = Bot;
+//module.exports = Bot;
+var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
+bot.automation(200);
