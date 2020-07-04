@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
+import style from "./style.css";
 
-export default class Login extends Component {
-    render() {
+    const Login = () => {
         return (
-            <form>
+            <div>
+                <div className="container">
+                <form>
                 <h3>Sign In</h3>
 
                 <div className="form-group">
@@ -25,6 +27,11 @@ export default class Login extends Component {
 
                 <a href="/portfolio" className="btn btn-primary">Submit</a>
             </form>
+            </div>
+            </div>
+            
+            
         );
     }
-}
+
+    export default Login

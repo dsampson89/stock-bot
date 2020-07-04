@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class SignUp extends Component {
-    render() {
+const Signup = () => {
+
         return (
             <form>
                 <h3>Sign Up</h3>
@@ -31,4 +31,4 @@ export default class SignUp extends Component {
             </form>
         );
     }
-}
+export default Signup

@@ -2,7 +2,8 @@ import React from "react";
 
 function Stockcards() {
   return (
-      <div className="row">
+      <div>
+        <div className="row">
           <div className="col-md-3">
           <div className="card">
             <img src="..." class="card-img-top" alt="..."/>
@@ -24,6 +25,8 @@ function Stockcards() {
             </div>
           </div>
       </div>
+      </div>
+      
     
 
   );
