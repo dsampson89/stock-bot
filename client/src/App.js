@@ -5,20 +5,23 @@ import Nav from "./Components/Nav/index"
 import Login from "./Components/Login/index";
 import Signup from "./Components/SignUp/index.js";
 import Portfolio from './pages/Portfolio';
+import Stocks from "./pages/Stocks"
 
-import "./App.css";
-// import "./index.css"
+import "./index.css"
 
 class App extends Component{
   render() {
     return(
+      
       <BrowserRouter>
+      <Nav />
+      
         <div className= "App">
-        <Nav />
               <Route exact path='/' component={Login} />
               <Route path="/sign-in" component={Login} />
               <Route path="/sign-up" component={Signup} />
-              <Route path ="/portfolio" component={Portfolio} />  
+              <Route path ="/portfolio" component={Portfolio} />
+              <Route path ="/stocks" component={Stocks} />
         </div>
       </BrowserRouter>
     )

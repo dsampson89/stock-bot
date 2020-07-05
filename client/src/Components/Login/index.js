@@ -5,6 +5,11 @@ import style from "./style.css";
         return (
             <div>
                 <div className="container">
+                <div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id metus sed diam tristique tristique. Sed lobortis diam sit amet risus ornare cursus. Sed sollicitudin purus viverra, imperdiet lorem eleifend, tempus nibh. </p>
+  <a class="btn btn-primary btn-lg" href="/sign-up" role="button">Learn more</a>
+</div>
                 <form>
                 <h3>Sign In</h3>
 
