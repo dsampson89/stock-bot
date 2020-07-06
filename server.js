@@ -3,6 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const Bot = require('./routes/API/alpaca')
+const mongoose = require("mongoose")
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
