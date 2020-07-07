@@ -28,20 +28,6 @@ class Bot {
         })
     }
 
-    placeOrder(symbol, qty, side, type, tif, limit, stop,){
-        this.alpaca.createOrder({
-            symbol: symbol,
-            qty: qty,
-            side: side,
-            type: type,
-            time_in_force: tif,
-            limit_price: limit,
-            stop_price: stop
-          }).then((response)=>{
-              console.log(response);
-          })
-    }
-
     getStats(timeFrame, symbols, limit, start, end){
         return new Promise((resolve,reject)=>{
             this.alpaca.getBars(
@@ -56,24 +42,6 @@ class Bot {
                 resolve(response)
             }).catch((e)=>{
                 reject(e)
-            })
-        })
-    }
-
-    getAssetList(){
-        var assets = []
-        this.alpaca.getAssets({
-            status: 'active',
-            exchange: 'NASDAQ',
-            class: 'us_equity'
-        }).then((response)=>{
-            console.log(response.length)
-            for(var i = 0; i < response.length; i++){
-                assets.push(response[i].symbol)
-            }
-            console.log(assets)
-            fs.writeFile('assets.txt', assets, (err)=>{
-                if(err) throw err;
             })
         })
     }
