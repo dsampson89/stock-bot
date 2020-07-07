@@ -1,6 +1,6 @@
 const Alpaca = require('@alpacahq/alpaca-trade-api')
 const fs = require('fs');
-const util = require('./utilities')
+const util = require('./utilities');
 
 class Bot {
 
@@ -28,15 +28,25 @@ class Bot {
         })
     }
 
+    getPos(){
+        return new Promise((resolve,reject)=>{
+            this.alpaca.getPositions().then((response)=>{
+                resolve(response)
+            }).catch((e)=>{
+                reject(e)
+            })
+        })
+    }
+
     getStats(timeFrame, symbols, limit, start, end){
         return new Promise((resolve,reject)=>{
             this.alpaca.getBars(
-                timeFrame,
+                timeFrame, //'minute' | '1Min' | '5Min' | '15Min' | 'day' | '1D'
                 symbols, // which ticker symbols to get bars for
                 {
-                  limit: limit,
-                  start: start,
-                  end: end,
+                  limit: limit, //number
+                  start: start, //date string yyyy-mm-dd
+                  end: end, //date string yyyy-mm-dd
                 }
             ).then((response) => {
                 resolve(response)
