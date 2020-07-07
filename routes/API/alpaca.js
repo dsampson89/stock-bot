@@ -137,6 +137,4 @@ class Bot {
     }
 }
 
-//module.exports = Bot;
-var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
-bot.automation(200);
+module.exports = Bot;
