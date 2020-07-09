@@ -1,17 +1,18 @@
 import React from "react";
-import Stockcards from "../Components/StockCards/index";
-import Header from "../Components/Header/index"
-import Results from "../Components/Results/index"
-
+import Stockcards from "../Components/StockCards/stockCards";
+import Header from "../Components/Header/header"
+import Results from "../Components/Results/results"
+import Bot from "../API/alpaca"
 
 class Portfolio extends React.Component {
-    
-
+    state={
+        bot: new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
+    }
     render() {
         return (
             <div className="containter">
             <div>
-                <Header />
+                <Header bot={this.state.bot}/>
                 <Results />
                 <Stockcards />
             </div>

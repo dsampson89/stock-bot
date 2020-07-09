@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Switch, Route, BrowserRouter} from "react-router-dom";
 
-import Nav from "./Components/Nav/index"
-import Login from "./Components/Login/index";
+import Nav from "./Components/Nav/nav"
+import Login from "./Components/Login/login";
 import Signup from "./Components/SignUp/index.js";
 import Portfolio from './pages/Portfolio';
 import Stocks from "./pages/Stocks"
@@ -11,9 +11,12 @@ import Bot from "./API/alpaca"
 import "./index.css"
 
 class App extends Component{
-  state={
-    bot: new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
-  }
+  constructor(props) {
+    super(props);
+    this.state = {
+        bot: new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
+    }
+}
   render() {
     return(
       
