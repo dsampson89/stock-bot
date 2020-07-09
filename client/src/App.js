@@ -6,16 +6,19 @@ import Login from "./Components/Login/index";
 import Signup from "./Components/SignUp/index.js";
 import Portfolio from './pages/Portfolio';
 import Stocks from "./pages/Stocks"
+import Bot from "./API/alpaca"
 
 import "./index.css"
 
 class App extends Component{
+  state={
+    bot: new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
+  }
   render() {
     return(
       
       <BrowserRouter>
       <Nav />
-      
         <div className= "App">
               <Route exact path='/' component={Login} />
               <Route path="/sign-in" component={Login} />

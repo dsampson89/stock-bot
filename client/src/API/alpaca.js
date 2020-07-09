@@ -1,5 +1,5 @@
 const Alpaca = require('@alpacahq/alpaca-trade-api')
-const fs = require('fs');
+const assetsTxt = require("./assets.json")
 const util = require('./utilities');
 
 class Bot {
@@ -8,7 +8,7 @@ class Bot {
         this.url = APCA_API_BASE_URL;
         this.id = APCA_API_KEY_ID;
         this.secret = APCA_API_SECRET_KEY;
-        this.availableAssets = fs.readFileSync("./assets.txt").toString('utf-8').split(',');
+        this.availableAssets = assetsTxt;
 
         this.alpaca = new Alpaca({
             keyId: this.id,
@@ -115,4 +115,4 @@ class Bot {
     }
 }
 
-module.exports = Bot;
+export default Bot;
