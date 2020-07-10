@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import style from "./style.css"
 import React, { Component } from 'react'
 
-export class nav extends Component {
+class nav extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg bg-dark">

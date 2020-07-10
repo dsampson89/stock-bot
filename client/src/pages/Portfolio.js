@@ -12,7 +12,7 @@ class Portfolio extends React.Component {
         return (
             <div className="containter">
             <div>
-                <Header bot={this.state.bot}/>
+                <Header />
                 <Results />
                 <Stockcards />
             </div>
