@@ -5,14 +5,20 @@ export class stockInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        bot: new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
+        output: []
     }
-}
+  }
 
   initiate = async () => {
-    console.log(this.state.bot)
-    var output = await this.state.bot.automation(20, 500)
-    console.log(output)
+    var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
+
+    var test = bot.automation(20,600).then((response)=>{
+      return response
+    }).then((res)=>{
+      this.setState((state)=>{
+        return {output: res}
+      })
+    })
   }
 
   render() {

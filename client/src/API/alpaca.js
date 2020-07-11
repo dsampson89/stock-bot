@@ -61,7 +61,7 @@ class Bot {
         this.alpaca.closeAllPositions()
     }
 
-    async automation(pricePoint, budget){
+    automation(pricePoint, budget){
         var today = util.getDate()
         var assetsShuffled = util.shuffle(this.availableAssets)
         var promises = []
@@ -71,7 +71,7 @@ class Bot {
                 var objKey = Object.keys(response)
                 var asset = response[objKey]
                 if(asset){
-                    if(asset.length=10){
+                    if(asset.length==10){
                         try{
                             if(asset[0].closePrice <= pricePoint){
                                 var priceGuess = 0;
@@ -105,12 +105,13 @@ class Bot {
                 }
             }))
         }
-        Promise.all(promises).then(()=>{
+        return Promise.all(promises).then(()=>{
             this.liquidatePositions()
+            //console.log(output)
             return(output)
         }).catch((e)=>{
             console.log(e)
-            return('something is broken. try again.')
+            return(e)
         })
     }
 }
