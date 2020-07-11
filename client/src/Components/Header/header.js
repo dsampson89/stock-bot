@@ -32,9 +32,14 @@ class header extends Component {
                 <hr className="my-4"/>
                 <p>Build onto you portfolio</p>
                 <form className="input" onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
-                <input type="submit" value="Submit" />
-                </form>
+                    <div className="form-row">
+                        <div className="col">
+                            <input type="text" className="form-control" value={this.state.value} onChange={this.handleChange}/>
+                        </div>
+                        </div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
+                        </form>
+
                 <a className="btn btn-primary btn-lg" href="/stocks" role="button">Buy Stocks</a>
             </div>
         )
