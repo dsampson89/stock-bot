@@ -7,7 +7,7 @@ export class login extends Component {
             <div>
                 <div className="container">
                     <div className="jumbotron">
-                    <h1 className="display-4">Hello, world!</h1>
+                    <h1 className="display-4">Hello, Stock Traders!</h1>
                     <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id metus sed diam tristique tristique. Sed lobortis diam sit amet risus ornare cursus. Sed sollicitudin purus viverra, imperdiet lorem eleifend, tempus nibh. </p>
                     <a className="btn btn-primary btn-lg" href="/sign-up" role="button">Learn more</a>
                 </div>
