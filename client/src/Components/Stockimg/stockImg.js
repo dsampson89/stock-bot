@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Bot from '../../API/alpaca'
 
-class results extends Component {
+export class stockImg extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,13 +11,13 @@ class results extends Component {
     render() {
         return (
             <div className="card">
-                <h5 className="card-header">Featured Stock</h5>
+                <h5 className="card-header">Stock</h5>
                 <div className="card-body">
-                    <img src="..." className="card-img-top" alt="..."/>
+                <img src="..." className="card-img-top" alt="..."/>
                 </div>
             </div>
         )
     }
 }
 
-export default results
+export default stockImg

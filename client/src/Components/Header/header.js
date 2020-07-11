@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Bot from '../../API/alpaca'
 import style from "./style.css"
-export class header extends Component {
+
+class header extends Component {
     constructor(props) {
         super(props);
         this.state = {
