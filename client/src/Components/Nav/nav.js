@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 class nav extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg bg-dark">
+      <nav className="navbar navbar-expand-lg">
       <div className="container">
         <Link className="navbar-brand" to={"/sign-in"}>StockBOT</Link>
         <div className="collapse navbar-collapse">
