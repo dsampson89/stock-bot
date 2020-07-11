@@ -2,40 +2,57 @@ import React, { Component } from 'react'
 import Bot from '../../API/alpaca'
 
 class stockCards extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        bot: new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
-    }
+
+   dataGrab = async () => {
+    var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
+     bot.getStats(this.state.value).then((response)=>{
+       console.log(response)
+     })
+   }
+
+ handleChange(event) {
+    this.setState({value: event.target.value})
+ }
+
+handleSubmit(event){
+    alert("Search submited for: " + this.state.value);
+    event.preventDefault();
+    
 }
   render() {
-    return (
-      <div>
+
+    const cardInfo = [
+      {image:"", title:"", text:""}
+    ];
+
+    const renderCard = (card, index) => {
+      return(
+        <div>
+          <form className="input" onSubmit={this.handleSubmit}>
+                    <div className="form-row">
+                        <div className="col">
+                            <input type="text" className="form-control" value={this.state} onChange={this.handleChange}/>
+                        </div>
+                        </div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
         <div className="row">
           <div className="col-md-3">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..."/>
+            <div className="card" key={index}>
+              <img src={card.image} className="card-img-top" alt="..."/>
               <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="/login" className="btn btn-success">Show Stock</a>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..."/>
-              <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 className="card-title">{card.title}</h5>
+                  <p className="card-text">{card.text}</p>
                   <a href="/login" className="btn btn-success">Show Stock</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    )
+      )
+    }
+    return <div className="App">{cardInfo.map(renderCard)}</div>
+  
   }
 }
-
 export default stockCards
