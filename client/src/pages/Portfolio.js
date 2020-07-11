@@ -5,9 +5,6 @@ import Results from "../Components/Results/results"
 import Bot from "../API/alpaca"
 
 class Portfolio extends React.Component {
-    state={
-        bot: new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
-    }
     render() {
         return (
             <div className="containter">

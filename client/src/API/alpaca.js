@@ -38,15 +38,15 @@ class Bot {
         })
     }
 
-    getStats(timeFrame, symbols, limit, start, end){
+    getStats(symbols){
         return new Promise((resolve,reject)=>{
             this.alpaca.getBars(
-                timeFrame, //'minute' | '1Min' | '5Min' | '15Min' | 'day' | '1D'
+                'minute', //'minute' | '1Min' | '5Min' | '15Min' | 'day' | '1D'
                 symbols, // which ticker symbols to get bars for
                 {
-                  limit: limit, //number
-                  start: start, //date string yyyy-mm-dd
-                  end: end, //date string yyyy-mm-dd
+                  limit: 10, //number
+                  start: util.getDate(), //date string yyyy-mm-dd
+                  end: util.getDate(), //date string yyyy-mm-dd
                 }
             ).then((response) => {
                 resolve(response)
@@ -71,7 +71,7 @@ class Bot {
                 var objKey = Object.keys(response)
                 var asset = response[objKey]
                 if(asset){
-                    if(asset.length==10){
+                    if(asset.length===10){
                         try{
                             if(asset[0].closePrice <= pricePoint){
                                 var priceGuess = 0;
@@ -85,7 +85,8 @@ class Bot {
                                     var randomMult = Math.floor((Math.random()*10)+1)
                                     var numToBuy = Math.floor((Math.floor(budget/asset[0].closePrice))/randomMult)
                                     if(numToBuy>0){
-                                        output.push("bought " + numToBuy + " of " + objKey + " at " + asset[0].closePrice)
+                                        var expectedProf = (normalizedData*10).toFixed(2)
+                                        output.push("bought " + numToBuy + " of " + objKey + " at " + asset[0].closePrice + " with an expected profit of " + expectedProf + "%")
                                         var moneySpent = numToBuy*asset[0].closePrice
                                         budget -= moneySpent
                                         this.alpaca.createOrder({
