@@ -4,4 +4,8 @@ nav{
     margin-right: inherit;
     margin-bottom: 30px;
     border-bottom: 2px black;
+    background-color: #0A2463;
+}
+.nav-link, .navbar-brand{
+    color: #FB3640;
 }
