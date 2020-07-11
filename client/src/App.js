@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Switch, Route, BrowserRouter} from "react-router-dom";
+import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Nav from "./Components/Nav/nav"
@@ -9,7 +10,7 @@ import Portfolio from './pages/Portfolio';
 import Stocks from "./pages/Stocks"
 import Bot from "./API/alpaca"
 
-import "./index.css"
+
 
 class App extends Component{
   render() {

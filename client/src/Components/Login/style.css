@@ -3,10 +3,12 @@
     color: #E2E2E2;
 }
 
-form{
+.card{
     margin: 20px auto;
     width: 300px;
     height: 400px;
     padding: 20px;
-    border: 2px solid grey;
+    border: 2px solid #605F5E;
+    background-color: #0A2463;
+    color: #E2E2E2;
 }
