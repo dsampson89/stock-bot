@@ -12,7 +12,7 @@ export class stockInfo extends Component {
   initiate = async () => {
     var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
 
-    var test = bot.automation(20,600).then((response)=>{
+    bot.automation(20,600).then((response)=>{
       return response
     }).then((res)=>{
       this.setState((state)=>{
@@ -20,6 +20,7 @@ export class stockInfo extends Component {
       })
     })
   }
+
 
   render() {
     return (
