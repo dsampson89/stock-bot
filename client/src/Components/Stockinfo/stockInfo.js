@@ -15,6 +15,7 @@ export class stockInfo extends Component {
           <button className="btn btn-primary btn-lg" onClick={this.props.initiate}>Buy Stocks</button>
           <hr></hr>
           <button className="btn btn-primary btn-lg" onClick={this.props.checkMoney}>Check Balance</button>
+          <h3>{this.props.money}</h3>
         </div>
       </div>
     )
