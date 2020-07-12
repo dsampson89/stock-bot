@@ -19,7 +19,6 @@ class Portfolio extends React.Component {
             var prices = []
             var objKey= Object.keys(response)
             var whatever = (response[objKey])
-            console.log(whatever)
             for(var i = 0; i < whatever.length; i ++){
                 prices.push(whatever[i].closePrice)
                 console.log(whatever[i].closePrice)
