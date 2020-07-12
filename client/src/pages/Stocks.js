@@ -1,7 +1,6 @@
 import React from "react";
 import Stockimg from "../Components/Stockimg/stockImg";
 import Stockinfo from "../Components/Stockinfo/stockInfo"
-import AccBalance from "../Components/AccountBalance/accBalance"
 import Bot from "../API/alpaca"
 
 
@@ -40,8 +39,7 @@ class Stocks extends React.Component {
         return (
             <div className="containter">
                 <div>
-                    <Stockinfo  initiate={this.initiate} checkMoney={this.checkMoney}/>
-                    <AccBalance money={this.state.money}/>
+                    <Stockinfo  initiate={this.initiate} checkMoney={this.checkMoney} money={this.state.money}/>
                     <Stockimg output={this.state.output}/>
                 </div>
             </div>
