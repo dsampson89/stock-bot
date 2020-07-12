@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Bot from '../../API/alpaca'
 
 class stockCards extends Component {
 
