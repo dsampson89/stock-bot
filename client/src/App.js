@@ -8,8 +8,6 @@ import Login from "./Components/Login/login";
 import Signup from "./Components/SignUp/index.js";
 import Portfolio from './pages/Portfolio';
 import Stocks from "./pages/Stocks"
-import Bot from "./API/alpaca"
-
 
 
 class App extends Component{

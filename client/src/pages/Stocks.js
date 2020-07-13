@@ -2,7 +2,6 @@ import React from "react";
 import Stockimg from "../Components/Stockimg/stockImg";
 import Stockinfo from "../Components/Stockinfo/stockInfo"
 import Bot from "../API/alpaca"
-import { response } from "express";
 
 
 class Stocks extends React.Component {
