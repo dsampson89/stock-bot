@@ -18,8 +18,11 @@ class Charts extends Component {
 
 render() {
     return(
-        <div className="chart" style={{width: 600, height: 300}}>
-            <Line
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="chart" style={{width: 600, height: 300}}>
+              <Line
                 data={this.state.chartData}
                 options={{
                     title:{
@@ -39,9 +42,11 @@ render() {
                       }
                     
                 }}
-                />
+              />
+            </div>
+          </div>
         </div>
-        
+      </div>        
     )
 }
 }

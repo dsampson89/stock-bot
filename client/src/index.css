@@ -1,8 +1,84 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
 
+:root{
+  --main-bg-color: #708B75;
+  --light-bg-color: #444B6E;
+  --component-bg-color: #F8F991;
+  --main-text-color: #3D315B;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: darkgrey;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+.container{
+  color: #3D315B;
+  background-color: var(--component-bg-color);
+}
+
+
+div .jumbotron{
+  height: 25%;
+  width: 50%;
+  background-color: var(--component-bg-color);
+  color: var(--main-text-color);
+}
+.jumbotron{
+  background-color: var(--component-bg-color);
+  color: var(--main-text-color);
+}
+
+.card{
+  margin: 20px auto;
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+  border: 2px solid #605F5E;
+  background-color: var(--light-bg-color);
+  color: var(--component-bg-color);
+}
+
+.container.card{
+  background-color: var(--light-bg-color);
+  color: var(--component-bg-color);
+}
+nav{
+  margin-top: 0;
+  margin-left: inherit;
+  margin-right: inherit;
+  margin-bottom: 30px;
+  background-color: var(--light-bg-color);
+}
+
+.nav-link, .navbar-brand{
+  color: var(--main-text-color);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: var(--main-bg-color);
+  height: 150px;
+  padding: 20px;
+  color: var(--main-text-color);
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

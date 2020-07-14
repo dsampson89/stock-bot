@@ -1,28 +1,26 @@
-import style from "./style.css";
 import React, { Component } from 'react'
 
 export class login extends Component {
     render() {
         return (
-          <div>
             <div className="container">
-              <div className="jumbotron">
-                <h1 className="display-4">Hello, Stock Traders!</h1>
-                <p className="lead">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Praesent id metus sed diam tristique tristique. Sed lobortis
-                  diam sit amet risus ornare cursus. Sed sollicitudin purus
-                  viverra, imperdiet lorem eleifend, tempus nibh.{" "}
-                </p>
-                <a
-                  className="btn btn-primary btn-lg"
-                  href="/sign-up"
-                  role="button"
-                >
-                  Learn more
-                </a>
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="jumbotron">
+                    <h1 className="display-4">Hello, Stock Traders!</h1>
+                    <p className="lead">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Praesent id metus sed diam tristique tristique. Sed lobortis
+                      diam sit amet risus ornare cursus. Sed sollicitudin purus
+                      viverra, imperdiet lorem eleifend, tempus nibh.{" "}
+                    </p>
+                    <a className="btn btn-primary btn-lg" href="/sign-up" role="button">Learn more</a>
+                  </div>
+                </div>
               </div>
-              <div className="card">
+              <div className="row">
+                <div className="col-lg-12">
+                <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">Sign In</h5>
                   <form>
@@ -67,8 +65,9 @@ export class login extends Component {
                   </form>
                 </div>
               </div>
+                </div>
+              </div>
             </div>
-          </div>
         );
     }
 }

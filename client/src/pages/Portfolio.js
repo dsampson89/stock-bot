@@ -7,52 +7,45 @@ import Bot from "../API/alpaca"
 class Portfolio extends React.Component {
 
     constructor(props) {
-        super(props);
-        this.state = {
-            chartData: {
-              labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-              datasets:[
-                {
-                  label:'Price',
-                  data:[]
-                }
-              ]
-            },
-    
-
-        }
+      super(props);
+      this.state = {
+        chartData: {
+          labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+          datasets:[
+            {
+              label:'Price',
+              data:[]
+            }
+          ]
+        },
+      }
     }
-    componentWillMount(){
-        // this.getchartData(); // this should be this.getChartData();
-         this.getChartData();
-       }
-     
-       getChartData=()=>{
-        var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
-        var prices = []
-        bot.getStats("AAPL").then((response)=>{
-           
-           var objKey= Object.keys(response)
-           var whatever = (response[objKey])
-           for(var i = 0; i < whatever.length; i ++){
-               prices.push(whatever[i].closePrice)
+     componentWillMount(){
+       this.getChartData()
+     }
+    getChartData=()=>{
+      var bot = new Bot('paper', 'PKA3G204E3WWS555WJ09', 'g6mMfSPU1F9SuKHrG0GfN2HS5loLAEDKbMtnabpX')
+      var prices = []
+      bot.getStats("AAPL").then((response)=>{    
+        var objKey= Object.keys(response)
+        var whatever = (response[objKey])
+        for(var i = 0; i < whatever.length; i ++){
+          prices.push(whatever[i].closePrice)
                
-           }
-           console.log(prices)
-           
-        })
-        this.setState({
-          chartData:{
-            labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-            datasets:[
-              {
-                label:'Price',
-                data: prices,
-                fill: false
-              }
-            ]
-          }
-        });
+        }
+      })
+      this.setState({
+        chartData:{
+          labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+          datasets:[
+            {
+              label:'Price',
+              data: prices,
+              fill: false
+            }
+          ]
+        }
+      });
     }
 
 

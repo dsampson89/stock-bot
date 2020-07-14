@@ -14,8 +14,7 @@ class Stocks extends React.Component {
     }
 
     initiate = async () => {
-        var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
-    
+        var bot = new Bot('paper', 'PKA3G204E3WWS555WJ09', 'g6mMfSPU1F9SuKHrG0GfN2HS5loLAEDKbMtnabpX')
         bot.automation(20,600).then((response)=>{
           return response
         }).then((res)=>{
@@ -26,7 +25,7 @@ class Stocks extends React.Component {
     }
 
     checkMoney = async () => {
-        var bot = new Bot('paper', 'PKV7RSE5YZS4KCV3RTYD', '8Yt2e5xM3LQwq0C2KDXnHUlhNllgEbQjhBLlj5Dd')
+        var bot = new Bot('paper', 'PKA3G204E3WWS555WJ09', 'g6mMfSPU1F9SuKHrG0GfN2HS5loLAEDKbMtnabpX')
         bot.getAcc().then((response)=>{
             this.setState((state)=>{
                 return{money:response.portfolio_value}
@@ -40,7 +39,7 @@ class Stocks extends React.Component {
             <div className="containter">
                 <div>
                     <Stockinfo  initiate={this.initiate} checkMoney={this.checkMoney} money={this.state.money}/>
-                    <Stockimg output={this.state.output}/>
+                    <div className="card"><Stockimg output={this.state.output}/></div>
                 </div>
             </div>
         )

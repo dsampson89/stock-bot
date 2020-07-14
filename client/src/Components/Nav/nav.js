@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import style from "./style.css"
 import React, { Component } from 'react'
 
 class nav extends Component {
