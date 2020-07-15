@@ -30,7 +30,6 @@ body {
 div .jumbotron{
   height: 25%;
   width: 100%;
-  background-color: var(--component-bg-color);
   color: var(--main-text-color);
 }
 .jumbotron{
@@ -44,6 +43,11 @@ div .jumbotron{
   height: 400px;
   padding: 20px;
   border: 2px solid #605F5E;
+  color: var(--main-bg-color);
+  background-color: var(--component-bg-color);
+}
+
+.chart {
   background-color: var(--main-bg-color);
   color: var(--component-bg-color);
 }
