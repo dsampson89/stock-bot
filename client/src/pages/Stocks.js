@@ -37,9 +37,15 @@ class Stocks extends React.Component {
     render() {
         return (
             <div className="containter">
-                <div>
-                    <Stockinfo  initiate={this.initiate} checkMoney={this.checkMoney} money={this.state.money}/>
-                    <div className="container"><Stockimg output={this.state.output}/></div>
+                <div className="row">
+                    <div className="col-lg-12">
+                        <Stockinfo  initiate={this.initiate} checkMoney={this.checkMoney} money={this.state.money}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="container"><Stockimg output={this.state.output}/></div>
+                    </div>
                 </div>
             </div>
         )
