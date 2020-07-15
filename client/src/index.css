@@ -17,6 +17,10 @@ body {
   color: var(--main-text-color);
 }
 
+.btn {
+ background-color: var(--light-bg-color);
+}
+
 .container{
   color: var(--main-text-color);
   background-color: var(--component-bg-color);
@@ -40,7 +44,7 @@ div .jumbotron{
   height: 400px;
   padding: 20px;
   border: 2px solid #605F5E;
-  background-color: var(--light-bg-color);
+  background-color: var(--main-bg-color);
   color: var(--component-bg-color);
 }
 
