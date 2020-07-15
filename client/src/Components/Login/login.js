@@ -20,8 +20,7 @@ export class login extends Component {
                 <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">Sign In</h5>
-                  <form>
-                      
+                  <form>   
                     <div className="form-group">
                       <label>App ID</label>
                       <input
@@ -30,7 +29,6 @@ export class login extends Component {
                         placeholder="Enter App ID"
                       />
                     </div>
-
                     <div className="form-group">
                       <label>App Secret</label>
                       <input
@@ -39,7 +37,6 @@ export class login extends Component {
                         placeholder="Enter Secret Key"
                       />
                     </div>
-
                     <div className="form-group">
                       <div className="custom-control custom-checkbox">
                         <input
