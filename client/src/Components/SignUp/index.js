@@ -3,7 +3,7 @@ import React from "react";
 const Signup = () => {
 
         return (
-            <div className="container">
+            <div className="container" id="signUp">
                 <div className="row">
                     <div className="col-lg-12">
                         <h3>61% of daily stock trades are high frequency trading bots.</h3>

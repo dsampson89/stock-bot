@@ -29,7 +29,6 @@ body {
 
 div .jumbotron{
   margin: 20px auto;
-  border: 2px solid #605F5E;
   width: 100%;
   color: var(--main-text-color);
   background-color: var(--component-bg-color);
@@ -49,6 +48,10 @@ div .jumbotron{
 #symbolButton{
  margin-top: 1em;
  margin-bottom: 1em;
+}
+
+#signUp{
+  border: 2px solid #605F5E;
 }
 
 .card{
