@@ -6,7 +6,7 @@ class stockCards extends Component {
       <div className="container">  
         <div className="row">
           <div className="col-lg-12">
-              <input type="text" className="form-control" />
+              <input type="text" placeholder="Stock Symbol" className="form-control" />
               <button className="btn btn-primary btn-lg" onClick={this.props.dataGrab}>Check Prices</button>
           </div>
         </div>

@@ -39,7 +39,7 @@ class Stocks extends React.Component {
             <div className="containter">
                 <div>
                     <Stockinfo  initiate={this.initiate} checkMoney={this.checkMoney} money={this.state.money}/>
-                    <div className="card"><Stockimg output={this.state.output}/></div>
+                    <div className="container"><Stockimg output={this.state.output}/></div>
                 </div>
             </div>
         )

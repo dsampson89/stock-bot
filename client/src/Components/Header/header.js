@@ -10,10 +10,9 @@ class header extends Component {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="jumbotron">
-                            <h1 className="display-4">Hello, User</h1>
-                            <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id metus sed diam tristique tristique.</p>
-                            <p>Build onto you portfolio</p>
-                            <a className="btn btn-primary btn-lg" href="/stocks" role="button">Buy Stocks</a>
+                            <h1 className="display-4">Get Started Below</h1>
+                            <a className="btn btn-primary btn-lg" href="/stocks" role="button">Start The Bot</a>
+                            <p className="lead">Even further down, check prices of individual stocks</p>
                         </div>
                     </div>
                 </div>

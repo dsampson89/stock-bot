@@ -3,32 +3,28 @@ import React from "react";
 const Signup = () => {
 
         return (
-            <form>
-                <h3>Sign Up</h3>
-
-                <div className="form-group">
-                    <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <h3>61% of daily stock trades are high frequency trading bots.</h3>
+                        <p>The biggest names in stocks are all using algorithmic trading. Why shouldn't you?</p>
+                        <p>Only 10% of trades are done manually, and those traders are losing out to Wall Street firms with computers that
+                            can make trades faster than you can click "buy"
+                        </p>
+                        <h2>We wanted to even the playing field.</h2>
+                    </div>
                 </div>
-
-                <div className="form-group">
-                    <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
+                <div className="row">
+                    <div className="col-lg-12">
+                        <h3>Our bot is easy to use</h3>
+                        <ol>
+                            <li>Sign up for a trading account with alpaca.markets</li>
+                            <li>Enter your api information <a href="/" role="button">here</a></li>
+                            <li>Click go and watch the profits come in, like a true Wolf of Wall Street</li>
+                        </ol>
+                    </div>
                 </div>
-
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
-
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                
-            </form>
+            </div>
         );
     }
 export default Signup

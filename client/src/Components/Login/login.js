@@ -7,12 +7,9 @@ export class login extends Component {
               <div className="row">
                 <div className="col-lg-12">
                   <div className="jumbotron">
-                    <h1 className="display-4">Hello, Stock Traders!</h1>
+                    <h1 className="display-4">Want to trade stocks but don't know how?</h1>
                     <p className="lead">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Praesent id metus sed diam tristique tristique. Sed lobortis
-                      diam sit amet risus ornare cursus. Sed sollicitudin purus
-                      viverra, imperdiet lorem eleifend, tempus nibh.{" "}
+                      Trade stocks with no stock market knowledge required! Just enter you api information from alpaca.markets and let our bot do all the work!{" "}
                     </p>
                     <a className="btn btn-primary btn-lg" href="/sign-up" role="button">Learn more</a>
                   </div>
@@ -26,20 +23,20 @@ export class login extends Component {
                   <form>
                       
                     <div className="form-group">
-                      <label>Email address</label>
+                      <label>App ID</label>
                       <input
                         type="email"
                         className="form-control"
-                        placeholder="Enter email"
+                        placeholder="Enter App ID"
                       />
                     </div>
 
                     <div className="form-group">
-                      <label>Password</label>
+                      <label>App Secret</label>
                       <input
                         type="password"
                         className="form-control"
-                        placeholder="Enter password"
+                        placeholder="Enter Secret Key"
                       />
                     </div>
 
