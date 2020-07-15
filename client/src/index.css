@@ -3,10 +3,10 @@
 :root{
   --main-bg-color: #708B75;
   --light-bg-color: #444B6E;
-  --component-bg-color: #F8F991;
-  --main-text-color: #3D315B;
+  --component-bg-color: #9AB87a;
+  --main-text-color: #FFFFFf;
   --btn-color: #444B6E;
-  --bt-text-color: #F8F991;
+  --bt-text-color: #9AB87a;
 }
 
 body {
@@ -28,9 +28,10 @@ body {
 
 
 div .jumbotron{
-  height: 25%;
+  
   width: 100%;
   color: var(--main-text-color);
+  background-color: var(--component-bg-color);
 }
 .jumbotron{
   background-color: var(--component-bg-color);
@@ -48,8 +49,9 @@ div .jumbotron{
 }
 
 .chart {
-  background-color: var(--main-bg-color);
+  background-color: white;
   color: var(--component-bg-color);
+  margin-bottom: 1em;
 }
 
 .container.card{
