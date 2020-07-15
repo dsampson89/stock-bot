@@ -22,19 +22,24 @@ body {
 }
 
 .container{
+  border: 2px solid #605F5E;
   color: var(--main-text-color);
   background-color: var(--component-bg-color);
 }
 
 
 div .jumbotron{
-  
+  margin: 20px auto;
+  border: 2px solid #605F5E;
   width: 100%;
   color: var(--main-text-color);
   background-color: var(--component-bg-color);
 }
+
 .jumbotron{
+  margin: 20px auto;
   background-color: var(--component-bg-color);
+  border: 2px solid #605F5E;
   color: var(--main-text-color);
 }
 
@@ -49,6 +54,7 @@ div .jumbotron{
 }
 
 .chart {
+  border: 2px solid #605F5E;
   background-color: white;
   color: var(--component-bg-color);
   margin-bottom: 1em;
