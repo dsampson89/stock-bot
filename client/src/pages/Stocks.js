@@ -44,7 +44,7 @@ class Stocks extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <div className="container"><Stockimg output={this.state.output}/></div>
+                        <div className="container" id="stockImg"><Stockimg output={this.state.output}/></div>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ class stockCards extends Component {
         <div className="row">
           <div className="col-lg-12">
               <input type="text" placeholder="Stock Symbol" className="form-control" />
-              <button className="btn btn-primary btn-lg" onClick={this.props.dataGrab}>Check Prices</button>
+              <button className="btn btn-primary btn-lg" id="symbolButton" onClick={this.props.dataGrab}>Check Prices</button>
           </div>
         </div>
       </div>
