@@ -49,8 +49,12 @@ div .jumbotron{
   height: 400px;
   padding: 20px;
   border: 2px solid #605F5E;
-  color: var(--main-bg-color);
+  color: var(--main-text-color);
   background-color: var(--component-bg-color);
+}
+
+#main-menu {
+  background-color: var(--main-bg-color);
 }
 
 .chart {

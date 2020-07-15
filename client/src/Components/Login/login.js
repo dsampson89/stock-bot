@@ -17,7 +17,7 @@ export class login extends Component {
               </div>
               <div className="row">
                 <div className="col-lg-12">
-                <div className="card">
+                <div className="card" id= "main-menu">
                 <div className="card-body">
                   <h5 className="card-title">Sign In</h5>
                   <form>   
