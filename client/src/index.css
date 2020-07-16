@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
 
 :root{
-  --main-bg-color: #708B75;
-  --light-bg-color: #444B6E;
-  --component-bg-color: #9AB87a;
+  --main-bg-color: #36A2F1;
+  --light-bg-color: #36A2F1;
+  --component-bg-color: #0B4D81;
   --main-text-color: #FFFFFf;
-  --btn-color: #444B6E;
-  --bt-text-color: #9AB87a;
+  --btn-color: #822E65;
+  --bt-text-color: #822E65;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 }
 
 .btn {
- background-color: var(--light-bg-color);
+ background-color: var(--btn-color);
 }
 
 .container{
@@ -35,9 +35,14 @@ div .jumbotron{
 }
 
 .jumbotron{
+  background-image: url(https://specials-images.forbesimg.com/imageserve/1201457952/960x0.jpg?fit=scale);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 20px auto;
   background-color: var(--component-bg-color);
   color: var(--main-text-color);
+  text-align: left;
 }
 
 #stockImg{
@@ -84,6 +89,11 @@ nav{
   margin-right: inherit;
   margin-bottom: 30px;
   background-color: var(--light-bg-color);
+}
+
+#navbg {
+ background-color: var(--light-bg-color);
+ border: none;
 }
 
 .nav-link, .navbar-brand{

@@ -5,8 +5,8 @@ class nav extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg">
-      <div className="container">
-        <Link className="navbar-brand" to={"/sign-in"}>StockBOT</Link>
+      <div className="container" id="navbg">
+        <Link className="navbar-brand" to={"/sign-in"}>Stock<i class="fas fa-robot"></i>BOT</Link>
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
