@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class login extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container" id="stockImg">
               <div className="row">
                 <div className="col-lg-12">
                   <div className="jumbotron">

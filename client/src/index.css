@@ -22,7 +22,6 @@ body {
 }
 
 .container{
-  border: 2px solid #605F5E;
   color: var(--main-text-color);
   background-color: var(--component-bg-color);
 }
