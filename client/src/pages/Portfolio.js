@@ -51,7 +51,7 @@ class Portfolio extends React.Component {
 
     render() {
         return (
-            <div className="containter">
+            <div className="containter" id="stockImg">
             <div>
                 <Header />
                 <Charts output={this.state.chartData}/>
