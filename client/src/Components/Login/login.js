@@ -6,7 +6,7 @@ export class login extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  <div className="jumbotron">
+                  <div className="jumbotron" id="main-header">
                     <h1 className="display-4">Want to trade stocks but don't know how?</h1>
                     <p className="lead">
                       Trade stocks with no stock market knowledge required! Just enter you api information from alpaca.markets and let our bot do all the work!{" "}
