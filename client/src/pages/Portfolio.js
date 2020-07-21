@@ -41,6 +41,7 @@ class Portfolio extends React.Component {
             {
               label:'Price',
               data: prices,
+              borderColor: "#822E65",
               fill: false
             }
           ]

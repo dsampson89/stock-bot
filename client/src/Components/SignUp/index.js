@@ -13,7 +13,7 @@ const Signup = () => {
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <img src="https://specials-images.forbesimg.com/imageserve/1201457952/960x0.jpg?fit=scale" className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-none d-md-block">
+                            <div className="carousel-caption d-none d-md-block" id="caption">
                                 <h1>61% of daily stock trades are high frequency trading bots.</h1>
                                 <p>The biggest names in stocks are all using algorithmic trading. Why shouldn't you?</p>
                                 <p>Only 10% of trades are done manually, and those traders are losing out to Wall Street firms with computers that
@@ -24,14 +24,14 @@ const Signup = () => {
                         </div>
                         <div className="carousel-item">
                             <img src="https://specials-images.forbesimg.com/imageserve/1201457952/960x0.jpg?fit=scale" className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-none d-md-block">
+                            <div className="carousel-caption d-none d-md-block" id="caption">
                                 <h1>We wanted to even the playing field.</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>Passive income for a more comfortable life.</p>
                             </div>
                         </div>
                         <div className="carousel-item">
                             <img src="https://specials-images.forbesimg.com/imageserve/1201457952/960x0.jpg?fit=scale" className="d-block w-100" alt="..."/>
-                            <div className="carousel-caption d-none d-md-block">
+                            <div className="carousel-caption d-none d-md-block" id="caption">
                                 <h1>Our bot is easy to use</h1>
                                 <ol>
                                     <li>Sign up for a trading account with alpaca.markets</li>

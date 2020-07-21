@@ -6,6 +6,7 @@ import Login from "./Components/Login/login";
 import Signup from "./Components/SignUp/index.js";
 import Portfolio from './pages/Portfolio';
 import Stocks from "./pages/Stocks"
+import Footer from "./Components/Footer/footer"
 
 
 class App extends Component{
@@ -21,6 +22,7 @@ class App extends Component{
               <Route path ="/portfolio" component={Portfolio} />
               <Route path ="/stocks" component={Stocks} />
         </div>
+        <Footer />
       </BrowserRouter>
     )
   }

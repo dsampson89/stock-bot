@@ -24,6 +24,9 @@ body {
   color: var(--main-text-color);
   background-color: var(--component-bg-color);
 }
+#caption{
+  text-shadow:2px 2px black;
+}
 
 
 div .jumbotron{
@@ -80,6 +83,14 @@ div .jumbotron{
 .container.card{
   background-color: var(--light-bg-color);
   color: var(--component-bg-color);
+}
+
+footer{
+ background-color: var(--light-bg-color);
+ bottom: 0;
+ width: 100%;
+ color: white;
+ margin-top: 20px;
 }
 nav{
   margin-top: 0;
