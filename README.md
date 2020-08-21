@@ -1,29 +1,26 @@
-# Create React Express App
+# Stock-Bot
 
-## About This Boilerplate
+## About Stock-Bot
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+An algorithmic stock trading app that makes it easy for to buy, sell and trade stocks.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Getting Started
 
-## Starting the app locally
+Start by signing up for an Alpaca account https://app.alpaca.markets/signup
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+Enter info into our app to get started
+![GitHub Logo]()
 
-```
-npm install
-```
+Check status of stocks
+![GitHub Logo]()
 
-This should install node modules within the server and the client folder.
+Purchase stocks
+![GitHub Logo]()
 
-After both installations complete, run the following command in your terminal:
+Check balance
+![GitHub Logo]()
 
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
 ## Deployment (Heroku)
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+https://stockbot20.herokuapp.com/
