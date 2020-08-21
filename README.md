@@ -9,7 +9,7 @@ An algorithmic stock trading app that makes it easy for to buy, sell and trade s
 Start by signing up for an Alpaca account https://app.alpaca.markets/signup
 
 Enter info into our app to get started
-![GitHub Logo]()
+![GitHub Logo](/client/public/login.png)
 
 Check status of stocks
 ![GitHub Logo]()
