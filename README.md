@@ -18,7 +18,7 @@ Purchase stocks
 ![GitHub Logo](/client/public/images/purchased.png)
 
 Check balance
-![GitHub Logo](/client/public/images/balancecheck.png)
+![GitHub Logo](/client/public/images/balance check.png)
 
 
 ## Deployment (Heroku)
