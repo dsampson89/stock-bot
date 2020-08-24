@@ -12,13 +12,13 @@ Enter info into our app to get started
 ![GitHub Logo](/client/public/images/login.png)
 
 Check status of stocks
-![GitHub Logo]()
+![GitHub Logo](/client/public/images/portfolio.png)
 
 Purchase stocks
-![GitHub Logo]()
+![GitHub Logo](/client/public/images/purchased.png)
 
 Check balance
-![GitHub Logo]()
+![GitHub Logo](/client/public/images/balancecheck.png)
 
 
 ## Deployment (Heroku)
